@@ -16,16 +16,20 @@
 
 :root {
   color-scheme: light;
-  --background: #f4f8ff;
-  --background-elevated: rgba(244, 248, 255, 0.78);
-  --surface: rgba(255, 255, 255, 0.82);
-  --surface-strong: rgba(255, 255, 255, 0.95);
+  --background: #edf4ff;
+  --background-elevated: rgba(237, 244, 255, 0.82);
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-strong: rgba(255, 255, 255, 0.96);
   --foreground: #0f172a;
   --muted: #475569;
   --border: rgba(15, 23, 42, 0.1);
   --ring: rgba(37, 99, 235, 0.22);
-  --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
-  --shadow-strong: 0 24px 80px rgba(15, 23, 42, 0.15);
+  --shadow:
+    0 14px 34px rgba(15, 23, 42, 0.07),
+    0 28px 90px rgba(37, 99, 235, 0.08);
+  --shadow-strong:
+    0 18px 42px rgba(15, 23, 42, 0.1),
+    0 34px 110px rgba(37, 99, 235, 0.12);
 }
 
 .dark {
@@ -38,8 +42,12 @@
   --muted: #94a3b8;
   --border: rgba(148, 163, 184, 0.16);
   --ring: rgba(96, 165, 250, 0.26);
-  --shadow: 0 24px 60px rgba(2, 6, 23, 0.34);
-  --shadow-strong: 0 24px 80px rgba(2, 6, 23, 0.45);
+  --shadow:
+    0 16px 38px rgba(2, 6, 23, 0.3),
+    0 34px 100px rgba(2, 6, 23, 0.38);
+  --shadow-strong:
+    0 20px 48px rgba(2, 6, 23, 0.38),
+    0 40px 120px rgba(2, 6, 23, 0.52);
 }
 
 * {
@@ -55,8 +63,9 @@ body {
   min-height: 100vh;
   background:
     radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 34%),
+    radial-gradient(circle at 20% 20%, rgba(15, 23, 42, 0.04), transparent 28%),
     radial-gradient(circle at 85% 0%, rgba(124, 58, 237, 0.14), transparent 24%),
-    linear-gradient(180deg, #f9fbff 0%, var(--background) 100%);
+    linear-gradient(180deg, #f6f9ff 0%, var(--background) 100%);
   color: var(--foreground);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
@@ -67,6 +76,7 @@ body {
 .dark body {
   background:
     radial-gradient(circle at top left, rgba(37, 99, 235, 0.2), transparent 34%),
+    radial-gradient(circle at 22% 18%, rgba(15, 23, 42, 0.24), transparent 28%),
     radial-gradient(circle at 85% 0%, rgba(124, 58, 237, 0.18), transparent 24%),
     linear-gradient(180deg, #020617 0%, #081224 100%);
 }
@@ -87,6 +97,25 @@ body::before {
 
 .dark body::before {
   opacity: 0.18;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.4), transparent 38%),
+    radial-gradient(circle at 50% 120%, rgba(15, 23, 42, 0.08), transparent 48%),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03), transparent 16%, transparent 84%, rgba(15, 23, 42, 0.03));
+}
+
+.dark body::after {
+  background:
+    radial-gradient(circle at 50% -10%, rgba(96, 165, 250, 0.06), transparent 34%),
+    radial-gradient(circle at 50% 120%, rgba(2, 6, 23, 0.36), transparent 48%),
+    linear-gradient(90deg, rgba(2, 6, 23, 0.16), transparent 18%, transparent 82%, rgba(2, 6, 23, 0.16));
 }
 
 a {
@@ -120,16 +149,32 @@ section[id] {
 
 .panel {
   border: 1px solid var(--border);
-  background: var(--surface);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)),
+    var(--surface);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
 }
 
 .panel-strong {
   border: 1px solid var(--border);
-  background: var(--surface-strong);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.96)),
+    var(--surface-strong);
   box-shadow: var(--shadow-strong);
   backdrop-filter: blur(22px);
+}
+
+.dark .panel {
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(10, 18, 38, 0.94)),
+    var(--surface);
+}
+
+.dark .panel-strong {
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(10, 18, 38, 0.98)),
+    var(--surface-strong);
 }
 
 .section-kicker {
@@ -174,11 +219,13 @@ section[id] {
   border-color: var(--border);
   background: var(--surface);
   color: var(--foreground);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
 }
 
 .btn-secondary:hover {
   border-color: rgba(96, 165, 250, 0.4);
   background: rgba(37, 99, 235, 0.08);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.12);
 }
 
 .chip {
@@ -186,6 +233,7 @@ section[id] {
   border-color: var(--border);
   background: var(--surface);
   color: var(--foreground);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.04);
 }
 
 .input-field {
@@ -193,6 +241,7 @@ section[id] {
   border-color: var(--border);
   background: rgba(255, 255, 255, 0.72);
   color: var(--foreground);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
 }
 
 .dark .input-field {

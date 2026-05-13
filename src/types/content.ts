@@ -21,6 +21,8 @@ export interface Project {
   technologies: string[]
   category: string
   outcome: string
+  image: string
+  imageAlt: string
 }
 
 export type TechnologyCategory =

@@ -8,6 +8,9 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Laravel', 'MySQL'],
     category: 'Ventas',
     outcome: 'Embudo centralizado y seguimiento multicanal en un solo lugar.',
+    image:
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Equipo comercial revisando indicadores y estrategia en una sala de trabajo.',
   },
   {
     name: 'Plataforma de citas médicas',
@@ -16,6 +19,9 @@ export const projects: Project[] = [
     technologies: ['React', 'PHP', 'MySQL', 'WhatsApp API'],
     category: 'Salud',
     outcome: 'Menos ausencias y mejor coordinación entre recepción y personal asistencial.',
+    image:
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Profesional de salud usando una plataforma digital en un entorno clínico.',
   },
   {
     name: 'Bot de WhatsApp para confirmación de agendas',
@@ -24,6 +30,9 @@ export const projects: Project[] = [
     technologies: ['WhatsApp API', 'Node.js', 'Webhooks'],
     category: 'Automatización',
     outcome: 'Respuestas más rápidas y ahorro de tiempo en llamadas repetitivas.',
+    image:
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Persona trabajando con mensajería y automatización desde un computador portátil.',
   },
   {
     name: 'Sistema de mesa de ayuda',
@@ -32,6 +41,9 @@ export const projects: Project[] = [
     technologies: ['React', 'Laravel', 'Docker'],
     category: 'Soporte',
     outcome: 'Mayor control operativo y tiempos de atención medibles.',
+    image:
+      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Equipo colaborando en un entorno de soporte y coordinación operativa.',
   },
   {
     name: 'Dashboard administrativo',
@@ -40,6 +52,9 @@ export const projects: Project[] = [
     technologies: ['Power BI', 'APIs', 'MySQL'],
     category: 'Analítica',
     outcome: 'Visibilidad ejecutiva en tiempo real para decisiones de negocio.',
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Pantalla con gráficos y métricas de negocio para análisis administrativo.',
   },
   {
     name: 'Integración con facturación electrónica',
@@ -48,5 +63,8 @@ export const projects: Project[] = [
     technologies: ['PHP', 'APIs', 'Nginx'],
     category: 'Integraciones',
     outcome: 'Reducción de errores manuales y continuidad del flujo administrativo.',
+    image:
+      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Documentación financiera y procesos administrativos digitales en un escritorio.',
   },
 ]
