@@ -24,7 +24,7 @@ const initialFormValues: FormValues = {
 const contactDetails = [
   {
     label: 'Correo',
-    value: 'contacto@willcotecnologia.com',
+    value: 'willcotecnologia@gmail.com',
     icon: Mail,
   },
   {
@@ -34,12 +34,12 @@ const contactDetails = [
   },
   {
     label: 'WhatsApp',
-    value: '+57 300 000 0000',
+    value: '+57 3003273405',
     icon: Phone,
   },
   {
     label: 'Respuesta estimada',
-    value: 'En horario laboral',
+    value: '72 horas hábiles',
     icon: Clock3,
   },
 ]

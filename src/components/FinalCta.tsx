@@ -25,13 +25,13 @@ export function FinalCta() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
+          <div className="flex flex-col gap-4 sm:flex-row lg:flex-col text-slate-950">
             <a
               href="#contacto"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5"
             >
               Agendar asesoría
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4 text-slate-950" />
             </a>
             <a
               href="#servicios"
