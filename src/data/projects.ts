@@ -1,4 +1,6 @@
 import type { Project } from '../types/content'
+import citasMedicasImage from '../assets/images/citas-medicas.png'
+import chatIAImage from '../assets/images/chatia.png'
 
 export const projects: Project[] = [
   {
@@ -19,9 +21,8 @@ export const projects: Project[] = [
     technologies: ['React', 'PHP', 'MySQL', 'WhatsApp API'],
     category: 'Salud',
     outcome: 'Menos ausencias y mejor coordinación entre recepción y personal asistencial.',
-    image:
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1400&q=80',
-    imageAlt: 'Profesional de salud usando una plataforma digital en un entorno clínico.',
+    image: citasMedicasImage,
+    imageAlt: 'Aplicación de citas médicas con agenda digital, confirmación y recordatorios.',
   },
   {
     name: 'Bot de WhatsApp para confirmación de agendas',
@@ -30,9 +31,8 @@ export const projects: Project[] = [
     technologies: ['WhatsApp API', 'Node.js', 'Webhooks'],
     category: 'Automatización',
     outcome: 'Respuestas más rápidas y ahorro de tiempo en llamadas repetitivas.',
-    image:
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80',
-    imageAlt: 'Persona trabajando con mensajería y automatización desde un computador portátil.',
+    image: chatIAImage,
+    imageAlt: 'Asistente automatizado en WhatsApp con flujos conversacionales y tareas conectadas.',
   },
   {
     name: 'Sistema de mesa de ayuda',

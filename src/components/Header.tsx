@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import type { Theme } from '../hooks/useTheme'
+import { BrandLogo } from './BrandLogo'
 import { ThemeToggle } from './ThemeToggle'
 
 interface HeaderProps {
@@ -14,7 +15,6 @@ const navigation = [
   { label: 'Nosotros', href: '#nosotros' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Tecnologías', href: '#tecnologias' },
   { label: 'Contacto', href: '#contacto' },
 ]
 
@@ -54,8 +54,11 @@ export function Header({ theme, onToggle }: HeaderProps) {
       }}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#inicio" className="font-display text-lg font-bold tracking-tight">
-          Willco <span className="text-brand-500 dark:text-brand-300">Tecnología</span>
+        <a href="#inicio" className="inline-flex items-center gap-3" aria-label="Willco Tecnología">
+          <BrandLogo theme={theme} className="h-10 w-28 sm:h-11 sm:w-[7.5rem]" />
+          <span className="font-display text-xl font-bold tracking-tight sm:text-2xl">
+            Willco <span className="text-brand-500 dark:text-brand-300">Tecnología</span>
+          </span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">

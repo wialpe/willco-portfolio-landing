@@ -9,8 +9,6 @@ import {
 } from 'lucide-react'
 import { fadeInUp, staggerContainer } from '../lib/motion'
 
-const badges = ['Laravel', 'React', 'APIs', 'WhatsApp Business', 'Cloud', 'CRM']
-
 const dashboardStats = [
   { label: 'Proyectos activos', value: '08' },
   { label: 'Integraciones', value: '+10' },
@@ -41,7 +39,7 @@ export function Hero() {
           variants={staggerContainer}
         >
           <motion.span className="section-kicker w-fit" variants={fadeInUp}>
-            Portafolio tecnológico
+            Soluciones digitales
           </motion.span>
 
           <motion.div className="mt-8 space-y-6" variants={fadeInUp}>
@@ -71,14 +69,6 @@ export function Hero() {
             <span>Arquitectura, automatización y acompañamiento end-to-end.</span>
           </motion.div>
 
-          <motion.div className="mt-8 flex flex-wrap gap-3" variants={fadeInUp}>
-            {badges.map((badge) => (
-              <span key={badge} className="chip">
-                <span className="h-2 w-2 rounded-full bg-brand-500 dark:bg-brand-300" />
-                {badge}
-              </span>
-            ))}
-          </motion.div>
         </motion.div>
 
         <motion.div
@@ -99,7 +89,7 @@ export function Hero() {
                   Centro de soluciones
                 </p>
                 <h2 className="mt-2 font-display text-2xl font-semibold text-slate-950 dark:text-white">
-                  Tecnología conectada al negocio
+                  Operación conectada al negocio
                 </h2>
               </div>
               <span className="chip shrink-0 text-xs">Disponible</span>
@@ -117,21 +107,21 @@ export function Hero() {
             <div className="hero-code mt-6 rounded-[28px] border border-white/8 p-5 text-slate-100">
               <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-slate-400">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                workflow.ts
+                Flujo recomendado
               </div>
 
               <div className="mt-4 space-y-2 font-mono text-[13px] leading-6 sm:text-sm">
                 <p>
-                  <span className="text-cyan-300">connect</span>(crm, whatsapp, billing)
+                  <span className="text-cyan-300">detectar</span>(cuellos_de_botella, tareas, demoras)
                 </p>
                 <p>
-                  <span className="text-fuchsia-300">automate</span>(leads, citas, soporte)
+                  <span className="text-fuchsia-300">ordenar</span>(equipos, seguimiento, prioridades)
                 </p>
                 <p>
-                  <span className="text-emerald-300">deploy</span>(docker, nginx, cloud)
+                  <span className="text-emerald-300">automatizar</span>(respuestas, flujos, recordatorios)
                 </p>
                 <p>
-                  <span className="text-amber-300">measure</span>(dashboards, powerBI, alerts)
+                  <span className="text-amber-300">medir</span>(conversiones, tiempos, resultados)
                 </p>
               </div>
             </div>

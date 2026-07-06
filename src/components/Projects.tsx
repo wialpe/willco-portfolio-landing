@@ -1,100 +1,11 @@
 import { motion } from 'framer-motion'
-import type { LucideIcon } from 'lucide-react'
-import { ArrowRight, ChartColumnIncreasing, PlugZap, Workflow } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
-import {
-  siDocker,
-  siLaravel,
-  siMysql,
-  siNginx,
-  siNodedotjs,
-  siPhp,
-  siReact,
-  type SimpleIcon,
-  siTypescript,
-  siWhatsapp,
-} from 'simple-icons'
 import { projects } from '../data/projects'
 import { fadeInUp, staggerContainer, viewport } from '../lib/motion'
 import { SectionHeading } from './SectionHeading'
 
 const INITIAL_PROJECTS = 3
-
-type TechnologyVisual =
-  | {
-      kind: 'simple'
-      icon: SimpleIcon
-    }
-  | {
-      kind: 'lucide'
-      icon: LucideIcon
-      iconClassName: string
-    }
-
-const technologyVisuals: Record<string, TechnologyVisual> = {
-  React: { kind: 'simple', icon: siReact },
-  TypeScript: { kind: 'simple', icon: siTypescript },
-  Laravel: { kind: 'simple', icon: siLaravel },
-  MySQL: { kind: 'simple', icon: siMysql },
-  PHP: { kind: 'simple', icon: siPhp },
-  'WhatsApp API': { kind: 'simple', icon: siWhatsapp },
-  'Node.js': { kind: 'simple', icon: siNodedotjs },
-  Docker: { kind: 'simple', icon: siDocker },
-  Nginx: { kind: 'simple', icon: siNginx },
-  APIs: {
-    kind: 'lucide',
-    icon: PlugZap,
-    iconClassName: 'text-sky-500 dark:text-sky-300',
-  },
-  Webhooks: {
-    kind: 'lucide',
-    icon: Workflow,
-    iconClassName: 'text-violet-soft dark:text-violet-300',
-  },
-  'Power BI': {
-    kind: 'lucide',
-    icon: ChartColumnIncreasing,
-    iconClassName: 'text-amber-500 dark:text-amber-300',
-  },
-}
-
-function getTechnologyToken(technology: string) {
-  return technology
-    .split(/[\s./-]+/)
-    .filter(Boolean)
-    .map((word) => word[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase()
-}
-
-function TechnologyBadge({ technology }: { technology: string }) {
-  const visual = technologyVisuals[technology]
-
-  return (
-    <span className="inline-flex items-center gap-3 rounded-full border border-brand-500/12 bg-white/72 px-4 py-2.5 text-sm font-medium text-slate-700 shadow-[0_12px_30px_rgba(15,23,42,0.04)] dark:border-white/8 dark:bg-white/5 dark:text-slate-200 dark:shadow-none">
-      <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-[0_8px_20px_rgba(15,23,42,0.08)] dark:bg-slate-950/80 dark:shadow-none">
-        {visual?.kind === 'simple' ? (
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            className="h-4.5 w-4.5"
-            fill={`#${visual.icon.hex}`}
-          >
-            <path d={visual.icon.path} />
-          </svg>
-        ) : visual?.kind === 'lucide' ? (
-          <visual.icon className={`h-4.5 w-4.5 ${visual.iconClassName}`} />
-        ) : (
-          <span className="text-[11px] font-bold tracking-[0.12em] text-brand-500 dark:text-brand-300">
-            {getTechnologyToken(technology)}
-          </span>
-        )}
-      </span>
-      <span>{technology}</span>
-    </span>
-  )
-}
 
 export function Projects() {
   const [showAllProjects, setShowAllProjects] = useState(false)
@@ -145,9 +56,6 @@ export function Projects() {
                       <span className="inline-flex rounded-full border border-brand-500/18 bg-brand-500/10 px-3 py-1 text-sm font-semibold tracking-tight text-brand-500 dark:border-brand-300/16 dark:bg-brand-300/10 dark:text-brand-300">
                         {project.category}
                       </span>
-                      <span className="font-display text-base font-semibold text-slate-400 dark:text-slate-500">
-                        Caso
-                      </span>
                     </div>
 
                     <h3 className="mt-8 max-w-xl font-display text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-[4rem] lg:leading-[1.08]">
@@ -160,13 +68,7 @@ export function Projects() {
                   </div>
 
                   <div className="mt-10">
-                    <div className="flex flex-wrap items-center gap-3">
-                      {project.technologies.map((technology) => (
-                        <TechnologyBadge key={technology} technology={technology} />
-                      ))}
-                    </div>
-
-                    <div className="mt-8 max-w-md rounded-[24px] border border-brand-500/12 bg-white/55 p-5 shadow-[0_18px_45px_rgba(15,23,42,0.05)] dark:border-white/8 dark:bg-white/4 dark:shadow-none">
+                    <div className="max-w-md rounded-[24px] border border-brand-500/12 bg-white/55 p-5 shadow-[0_18px_45px_rgba(15,23,42,0.05)] dark:border-white/8 dark:bg-white/4 dark:shadow-none">
                       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
                         Resultado esperado
                       </p>

@@ -1,4 +1,6 @@
 import { ArrowUpRight, GitBranch, Globe, MessageSquareText } from 'lucide-react'
+import type { Theme } from '../hooks/useTheme'
+import { BrandLogo } from './BrandLogo'
 
 const quickLinks = [
   { label: 'Inicio', href: '#inicio' },
@@ -37,15 +39,22 @@ const socialLinks = [
   },
 ]
 
-export function Footer() {
+interface FooterProps {
+  theme: Theme
+}
+
+export function Footer({ theme }: FooterProps) {
   const currentYear = new Date().getFullYear()
 
   return (
     <footer className="border-t px-6 py-12 lg:px-8" style={{ borderColor: 'var(--border)' }}>
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.6fr_0.7fr_0.8fr]">
         <div>
-          <a href="#inicio" className="font-display text-xl font-bold tracking-tight">
-            Willco <span className="text-brand-500 dark:text-brand-300">Tecnología</span>
+          <a href="#inicio" className="inline-flex items-center gap-3" aria-label="Willco Tecnología">
+            <BrandLogo theme={theme} className="h-11 w-[7.5rem] sm:h-12 sm:w-[8.5rem]" />
+            <span className="font-display text-2xl font-bold tracking-tight">
+              Willco <span className="text-brand-500 dark:text-brand-300">Tecnología</span>
+            </span>
           </a>
           <p className="mt-4 max-w-sm text-sm leading-7 text-slate-600 dark:text-slate-300">
             Desarrollo de software a la medida para empresas que necesitan automatizar,
