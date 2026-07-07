@@ -18,6 +18,7 @@ export interface Service {
 export interface Project {
   name: string
   description: string
+  highlights: string[]
   category: string
   outcome: string
   image: string

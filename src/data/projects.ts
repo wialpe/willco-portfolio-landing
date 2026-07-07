@@ -11,6 +11,7 @@ export const projects: Project[] = [
     name: 'CRM para gestión comercial',
     description:
       'Plataforma con seguimiento de leads, tareas automáticas, historial de clientes y reportes de cierre.',
+    highlights: ['Seguimiento de leads', 'Tareas automáticas', 'Reportes de cierre'],
     category: 'Ventas',
     outcome: 'Embudo centralizado y seguimiento multicanal en un solo lugar.',
     image: crmGestionComercialImage,
@@ -20,6 +21,7 @@ export const projects: Project[] = [
     name: 'Plataforma de citas médicas',
     description:
       'Sistema web para agenda, confirmación de pacientes, control de disponibilidad y recordatorios.',
+    highlights: ['Agenda digital', 'Confirmación de pacientes', 'Recordatorios automáticos'],
     category: 'Salud',
     outcome: 'Menos ausencias y mejor coordinación entre recepción y personal asistencial.',
     image: citasMedicasImage,
@@ -29,6 +31,7 @@ export const projects: Project[] = [
     name: 'Bot de WhatsApp para confirmación de agendas',
     description:
       'Automatización conectada con calendarios y base de datos para confirmar, mover o cancelar citas.',
+    highlights: ['Confirmación automática', 'Cambios de cita', 'Conexión con calendarios'],
     category: 'Automatización',
     outcome: 'Respuestas más rápidas y ahorro de tiempo en llamadas repetitivas.',
     image: chatIAImage,
@@ -38,6 +41,7 @@ export const projects: Project[] = [
     name: 'Sistema de mesa de ayuda',
     description:
       'Módulo para tickets, asignación por prioridad, seguimiento SLA y trazabilidad de soporte interno.',
+    highlights: ['Tickets por prioridad', 'Seguimiento SLA', 'Trazabilidad operativa'],
     category: 'Soporte',
     outcome: 'Mayor control operativo y tiempos de atención medibles.',
     image: mesaAyudaImage,
@@ -47,6 +51,7 @@ export const projects: Project[] = [
     name: 'Dashboard administrativo',
     description:
       'Tablero ejecutivo con indicadores de ventas, operación, cartera y productividad por equipo.',
+    highlights: ['KPIs en tiempo real', 'Análisis por equipo', 'Control de cartera y ventas'],
     category: 'Analítica',
     outcome: 'Visibilidad ejecutiva en tiempo real para decisiones de negocio.',
     image: dashboardAdministrativoImage,
@@ -56,6 +61,7 @@ export const projects: Project[] = [
     name: 'Integración con facturación electrónica',
     description:
       'Sincronización de pedidos, validación de datos y emisión automática con proveedor externo.',
+    highlights: ['Sincronización de pedidos', 'Validación de datos', 'Emisión automática'],
     category: 'Integraciones',
     outcome: 'Reducción de errores manuales y continuidad del flujo administrativo.',
     image: facturacionElectronicaImage,

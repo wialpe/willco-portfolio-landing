@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { projects } from '../data/projects'
-import { fadeInUp, staggerContainer, viewport } from '../lib/motion'
+import { fadeInUp, viewport } from '../lib/motion'
 import { SectionHeading } from './SectionHeading'
 
 export function Projects() {
@@ -23,17 +23,14 @@ export function Projects() {
           description="Estos proyectos ficticios reflejan escenarios reales donde combinamos software, automatización, infraestructura e integración de servicios."
         />
 
-        <motion.div
-          className="space-y-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          variants={staggerContainer}
-        >
+        <div className="space-y-6">
           {projects.map((project) => (
             <motion.article
               key={project.name}
               className="panel-strong group relative overflow-hidden rounded-[34px] transition duration-300 hover:-translate-y-1"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
               variants={fadeInUp}
             >
               <div
@@ -48,6 +45,9 @@ export function Projects() {
                       <span className="inline-flex rounded-full border border-brand-500/18 bg-brand-500/10 px-3 py-1 text-sm font-semibold tracking-tight text-brand-500 dark:border-brand-300/16 dark:bg-brand-300/10 dark:text-brand-300">
                         {project.category}
                       </span>
+                      <span className="font-display text-base font-semibold text-slate-400 dark:text-slate-500">
+                        Caso
+                      </span>
                     </div>
 
                     <h3 className="mt-8 max-w-xl font-display text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-[4rem] lg:leading-[1.08]">
@@ -57,6 +57,22 @@ export function Projects() {
                     <p className="mt-8 max-w-lg text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
                       {project.description}
                     </p>
+
+                    <div className="mt-8">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                        Incluye
+                      </p>
+                      <ul className="mt-4 flex flex-wrap gap-3">
+                        {project.highlights.map((highlight) => (
+                          <li
+                            key={highlight}
+                            className="rounded-full border border-brand-500/12 bg-white/72 px-4 py-2 text-sm font-medium text-slate-700 shadow-[0_12px_30px_rgba(15,23,42,0.04)] dark:border-white/8 dark:bg-white/5 dark:text-slate-200 dark:shadow-none"
+                          >
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
                   <div className="mt-10">
@@ -92,7 +108,7 @@ export function Projects() {
               </div>
             </motion.article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )
