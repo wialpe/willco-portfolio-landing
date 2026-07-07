@@ -28,6 +28,12 @@ const capabilities = [
   },
 ]
 
+const solutionAreas = [
+  { label: 'Integraciones', icon: MessageSquareText },
+  { label: 'Analítica', icon: ChartNoAxesCombined },
+  { label: 'Seguridad', icon: ShieldCheck },
+]
+
 export function Hero() {
   return (
     <section id="inicio" className="relative">
@@ -68,7 +74,6 @@ export function Hero() {
             <BadgeCheck className="h-5 w-5 text-emerald-500" />
             <span>Arquitectura, automatización y acompañamiento end-to-end.</span>
           </motion.div>
-
         </motion.div>
 
         <motion.div
@@ -143,11 +148,7 @@ export function Hero() {
             </div>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              {[
-                { label: 'Integraciones', icon: MessageSquareText },
-                { label: 'Analítica', icon: ChartNoAxesCombined },
-                { label: 'Seguridad', icon: ShieldCheck },
-              ].map(({ label, icon: Icon }) => (
+              {solutionAreas.map(({ label, icon: Icon }) => (
                 <div
                   key={label}
                   className="rounded-2xl border px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300"

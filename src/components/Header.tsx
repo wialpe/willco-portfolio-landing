@@ -16,14 +16,27 @@ export function Header({ theme, onToggle }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
+    let frameId = 0
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 16)
+      if (frameId) {
+        return
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 16)
+        frameId = 0
+      })
     }
 
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
+      if (frameId) {
+        window.cancelAnimationFrame(frameId)
+      }
+
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])

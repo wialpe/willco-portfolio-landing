@@ -1,6 +1,6 @@
 import type { Project } from '../types/content'
-import citasMedicasImage from '../assets/images/citas-medicas.png'
-import chatIAImage from '../assets/images/chatia.png'
+import citasMedicasImage from '../assets/images/citas-medicas.jpg'
+import chatIAImage from '../assets/images/chatia.jpg'
 
 export const projects: Project[] = [
   {

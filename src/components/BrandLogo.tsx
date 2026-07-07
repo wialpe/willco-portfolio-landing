@@ -16,6 +16,7 @@ export function BrandLogo({ className = 'h-10 w-32', theme }: BrandLogoProps) {
         src={logoSrc}
         alt=""
         aria-hidden="true"
+        decoding="async"
         className="h-full w-full scale-[1.12] object-cover object-center"
       />
     </span>

@@ -11,6 +11,12 @@ const advantages = [
   'Enfoque en resultados',
 ]
 
+const proofPoints = [
+  'Procesos más rápidos',
+  'Datos centralizados',
+  'Implementaciones seguras',
+]
+
 export function About() {
   return (
     <section id="nosotros" className="px-6 py-24 lg:px-8">
@@ -49,11 +55,7 @@ export function About() {
             </div>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {[
-                'Procesos más rápidos',
-                'Datos centralizados',
-                'Implementaciones seguras',
-              ].map((item) => (
+              {proofPoints.map((item) => (
                 <div
                   key={item}
                   className="rounded-3xl border px-4 py-5 text-sm font-medium text-slate-700 dark:text-slate-200"
