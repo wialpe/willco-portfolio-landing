@@ -1,17 +1,10 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import { useState } from 'react'
 import { projects } from '../data/projects'
 import { fadeInUp, staggerContainer, viewport } from '../lib/motion'
 import { SectionHeading } from './SectionHeading'
 
-const INITIAL_PROJECTS = 3
-
 export function Projects() {
-  const [showAllProjects, setShowAllProjects] = useState(false)
-
-  const visibleProjects = showAllProjects ? projects : projects.slice(0, INITIAL_PROJECTS)
-
   return (
     <section id="proyectos" className="relative px-6 py-24 lg:px-8">
       <div
@@ -37,7 +30,7 @@ export function Projects() {
           viewport={viewport}
           variants={staggerContainer}
         >
-          {visibleProjects.map((project) => (
+          {projects.map((project) => (
             <motion.article
               key={project.name}
               className="panel-strong group relative overflow-hidden rounded-[34px] transition duration-300 hover:-translate-y-1"
@@ -76,13 +69,10 @@ export function Projects() {
                       </p>
                     </div>
 
-                    <button
-                      type="button"
-                      className="btn-primary mt-10 w-fit"
-                    >
+                    <a href="#contacto" className="btn-primary mt-10 w-fit" aria-label={`Hablar sobre ${project.name}`}>
                       Ver proyecto
                       <ArrowRight className="h-5 w-5" />
-                    </button>
+                    </a>
                   </div>
                 </div>
 
