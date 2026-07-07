@@ -1,6 +1,10 @@
 import type { Project } from '../types/content'
 import citasMedicasImage from '../assets/images/citas-medicas.jpg'
 import chatIAImage from '../assets/images/chatia.jpg'
+import crmGestionComercialImage from '../assets/images/crm-gestion-comercial.jpg'
+import dashboardAdministrativoImage from '../assets/images/dashboard-administrativo.jpg'
+import facturacionElectronicaImage from '../assets/images/facturacion-electronica.jpg'
+import mesaAyudaImage from '../assets/images/mesa-ayuda.jpg'
 
 export const projects: Project[] = [
   {
@@ -9,8 +13,7 @@ export const projects: Project[] = [
       'Plataforma con seguimiento de leads, tareas automáticas, historial de clientes y reportes de cierre.',
     category: 'Ventas',
     outcome: 'Embudo centralizado y seguimiento multicanal en un solo lugar.',
-    image:
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80',
+    image: crmGestionComercialImage,
     imageAlt: 'Equipo comercial revisando indicadores y estrategia en una sala de trabajo.',
   },
   {
@@ -37,8 +40,7 @@ export const projects: Project[] = [
       'Módulo para tickets, asignación por prioridad, seguimiento SLA y trazabilidad de soporte interno.',
     category: 'Soporte',
     outcome: 'Mayor control operativo y tiempos de atención medibles.',
-    image:
-      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80',
+    image: mesaAyudaImage,
     imageAlt: 'Equipo colaborando en un entorno de soporte y coordinación operativa.',
   },
   {
@@ -47,8 +49,7 @@ export const projects: Project[] = [
       'Tablero ejecutivo con indicadores de ventas, operación, cartera y productividad por equipo.',
     category: 'Analítica',
     outcome: 'Visibilidad ejecutiva en tiempo real para decisiones de negocio.',
-    image:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80',
+    image: dashboardAdministrativoImage,
     imageAlt: 'Pantalla con gráficos y métricas de negocio para análisis administrativo.',
   },
   {
@@ -57,8 +58,7 @@ export const projects: Project[] = [
       'Sincronización de pedidos, validación de datos y emisión automática con proveedor externo.',
     category: 'Integraciones',
     outcome: 'Reducción de errores manuales y continuidad del flujo administrativo.',
-    image:
-      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80',
+    image: facturacionElectronicaImage,
     imageAlt: 'Documentación financiera y procesos administrativos digitales en un escritorio.',
   },
 ]
