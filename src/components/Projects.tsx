@@ -11,7 +11,6 @@ export function Projects() {
   const [showAllProjects, setShowAllProjects] = useState(false)
 
   const visibleProjects = showAllProjects ? projects : projects.slice(0, INITIAL_PROJECTS)
-  const hasMoreProjects = projects.length > INITIAL_PROJECTS
 
   return (
     <section id="proyectos" className="relative px-6 py-24 lg:px-8">
@@ -103,18 +102,6 @@ export function Projects() {
             </motion.article>
           ))}
         </motion.div>
-
-        {hasMoreProjects && (
-          <div className="mt-10 flex justify-center">
-            <button
-              type="button"
-              onClick={() => setShowAllProjects((current) => !current)}
-              className="btn-secondary"
-            >
-              {showAllProjects ? 'Mostrar menos proyectos' : 'Mostrar más proyectos'}
-            </button>
-          </div>
-        )}
       </div>
     </section>
   )
