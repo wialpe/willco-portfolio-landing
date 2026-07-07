@@ -2,6 +2,7 @@ import type { ChangeEvent, FormEvent } from 'react'
 import { useState } from 'react'
 import { Clock3, Mail, MapPin, MessageSquareText, Phone } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { buildWhatsAppHref, companyInfo } from '../data/site'
 import { fadeInUp, staggerContainer, viewport } from '../lib/motion'
 import { SectionHeading } from './SectionHeading'
 
@@ -24,22 +25,22 @@ const initialFormValues: FormValues = {
 const contactDetails = [
   {
     label: 'Correo',
-    value: 'willcotecnologia@gmail.com',
+    value: companyInfo.email,
     icon: Mail,
   },
   {
     label: 'Ubicación',
-    value: 'Medellín, Colombia',
+    value: companyInfo.location,
     icon: MapPin,
   },
   {
     label: 'WhatsApp',
-    value: '+57 3003273405',
+    value: companyInfo.whatsappDisplay,
     icon: Phone,
   },
   {
     label: 'Respuesta estimada',
-    value: '72 horas hábiles',
+    value: companyInfo.responseTime,
     icon: Clock3,
   },
 ]
@@ -66,6 +67,24 @@ export function Contact() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+
+    const message = [
+      'Hola, quiero solicitar una propuesta con Willco Tecnología.',
+      `Nombre: ${formValues.name}`,
+      `Empresa: ${formValues.company}`,
+      `Correo: ${formValues.email}`,
+      `Teléfono: ${formValues.phone}`,
+      `Mensaje: ${formValues.message}`,
+    ].join('\n')
+
+    const whatsappHref = buildWhatsAppHref(message)
+
+    const whatsappWindow = window.open(whatsappHref, '_blank', 'noopener,noreferrer')
+
+    if (!whatsappWindow) {
+      window.location.href = whatsappHref
+    }
+
     setIsSubmitted(true)
     setFormValues(initialFormValues)
   }
@@ -236,8 +255,8 @@ export function Contact() {
                 }`}
               >
                 {isSubmitted
-                  ? 'Solicitud enviada correctamente. Nos pondremos en contacto contigo.'
-                  : 'Te responderemos con una propuesta o ruta recomendada.'}
+                  ? 'Abrimos WhatsApp con tu solicitud para continuar la conversación.'
+                  : 'Al enviar, abriremos WhatsApp con tu solicitud prellenada.'}
               </p>
             </div>
           </motion.form>

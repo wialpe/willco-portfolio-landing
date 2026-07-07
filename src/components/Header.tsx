@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { navigationLinks } from '../data/site'
 import type { Theme } from '../hooks/useTheme'
 import { BrandLogo } from './BrandLogo'
 import { ThemeToggle } from './ThemeToggle'
@@ -9,14 +10,6 @@ interface HeaderProps {
   theme: Theme
   onToggle: () => void
 }
-
-const navigation = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Contacto', href: '#contacto' },
-]
 
 export function Header({ theme, onToggle }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -62,7 +55,7 @@ export function Header({ theme, onToggle }: HeaderProps) {
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">
-          {navigation.map((item) => (
+          {navigationLinks.map((item) => (
             <a key={item.href} href={item.href} className="nav-link">
               {item.label}
             </a>
@@ -113,7 +106,7 @@ export function Header({ theme, onToggle }: HeaderProps) {
               className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6"
               aria-label="Navegación móvil"
             >
-              {navigation.map((item) => (
+              {navigationLinks.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}

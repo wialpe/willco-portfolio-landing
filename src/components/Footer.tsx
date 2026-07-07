@@ -1,13 +1,7 @@
 import { ArrowUpRight, GitBranch, Globe, MessageSquareText } from 'lucide-react'
+import { buildWhatsAppHref, navigationLinks } from '../data/site'
 import type { Theme } from '../hooks/useTheme'
 import { BrandLogo } from './BrandLogo'
-
-const quickLinks = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Contacto', href: '#contacto' },
-]
 
 const serviceLinks = [
   'Desarrollo web',
@@ -34,7 +28,7 @@ const socialLinks = [
   },
   {
     label: 'WhatsApp',
-    href: 'https://wa.me/573000000000',
+    href: buildWhatsAppHref(),
     icon: MessageSquareText,
   },
 ]
@@ -67,7 +61,7 @@ export function Footer({ theme }: FooterProps) {
             Links rápidos
           </h3>
           <div className="mt-4 flex flex-col gap-3">
-            {quickLinks.map((link) => (
+            {navigationLinks.map((link) => (
               <a key={link.href} href={link.href} className="nav-link">
                 {link.label}
               </a>
