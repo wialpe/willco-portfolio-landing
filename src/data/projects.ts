@@ -28,12 +28,12 @@ export const projects: Project[] = [
     imageAlt: 'Aplicación de citas médicas con agenda digital, confirmación y recordatorios.',
   },
   {
-    name: 'Bot de WhatsApp para confirmación de agendas',
+    name: 'Sistema inteligente de atención y gestión residencial',
     description:
-      'Automatización conectada con calendarios y base de datos para confirmar, mover o cancelar citas.',
-    highlights: ['Confirmación automática', 'Cambios de cita', 'Conexión con calendarios'],
+      'Atencion inteligente por whatsapp para comunidades residennciales, mejorando la comunicacion y la gestion administrativa.',
+    highlights: ['Preguntas frecunetes con IA', 'Gestion de solicitudes y tickets', 'Envio de mensajes masivos', 'Dashboard y reportes'],
     category: 'Automatización',
-    outcome: 'Respuestas más rápidas y ahorro de tiempo en llamadas repetitivas.',
+    outcome: 'Un canal familiar cercano y seguro que impulsa la eficiencia de tu administracion y la satisfacion de tu comunidad.',
     image: chatIAImage,
     imageAlt: 'Asistente automatizado en WhatsApp con flujos conversacionales y tareas conectadas.',
   },
